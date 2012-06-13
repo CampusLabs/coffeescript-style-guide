@@ -208,6 +208,13 @@
     x = Math.sin(y)
     array.delete(e)
     ```
+    
+* Omit parenthesis for functions whose final argument is an anonymous function.
+
+    ```Coffeescript
+    _.map [1, 2, 3], (num) ->
+      num * 3
+    ```
 
 * Avoid `return` where not required.
 
