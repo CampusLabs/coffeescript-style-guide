@@ -6,6 +6,7 @@
 * [Comments](#comments)
 * [Annotations](#annotations)
 * [Classes](#classes)
+* [Strings](#strings)
 
 ## Source Code Layout
 
@@ -426,3 +427,33 @@ would happen if the current value happened to be `false`.)
     ```
 
 * Denote private methods and attributes with `_`.
+
+## Strings
+
+* Prefer string interpolation instead of string concatenation:
+
+    ```Coffeescript
+    # bad
+    email_with_name = user.name + ' <' + user.email + '>'
+
+    # good
+    email_with_name = "#{user.name} <#{user.email}>"
+    ```
+
+* Consider padding string interpolation code with space. It more clearly sets the
+  code apart from the string.
+
+    ```Coffeescript
+    "#{ user.last_name }, #{ user.first_name }"
+    ```
+
+* Prefer single-quoted strings when you don't need string interpolation or
+  special symbols such as `\t`, `\n`, `'`, etc.
+
+    ```Coffeescript
+    # bad
+    name = "Bozhidar"
+
+    # good
+    name = 'Bozhidar'
+    ```
