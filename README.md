@@ -5,6 +5,7 @@
 * [Naming](#naming)
 * [Comments](#comments)
 * [Annotations](#annotations)
+* [Classes](#classes)
 
 ## Source Code Layout
 
@@ -388,3 +389,40 @@ would happen if the current value happened to be `false`.)
   client does X currently?`
 * Use other custom annotation keywords if it feels appropriate, but be
   sure to document them in your project's `README` or similar.
+
+## Classes
+
+* When designing class hierarchies make sure that they conform to the
+  [Liskov Substitution Principle](http://en.wikipedia.org/wiki/Liskov_substitution_principle).
+* Try to make your classes as
+  [SOLID](http://en.wikipedia.org/wiki/SOLID_(object-oriented_design\))
+  as possible.
+* Prefer [duck-typing](http://en.wikipedia.org/wiki/Duck_typing) over inheritance.
+
+    ```Coffeescript
+    # bad
+    class Animal
+      # abstract method
+      speak: ->
+
+    # extend superclass
+    class Duck extends Animal
+      speak: ->
+        alert 'Quack! Quack'
+
+    # extend superclass
+    class Dog extends Animal
+      speak: ->
+        alert 'Bau! Bau!'
+
+    # good
+    class Duck
+      speak: ->
+        alert 'Quack! Quack'
+
+    class Dog
+      speak: ->
+        alert 'Bau! Bau!'
+    ```
+
+* Denote private methods and attributes with `_`.
