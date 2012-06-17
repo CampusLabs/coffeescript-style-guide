@@ -315,6 +315,22 @@ would happen if the current value happened to be `false`.)
 > it even clearer. <br/>
 > -- Steve McConnell
 
+* Remember that If the file has an initial comment block it will not be removed
+  when the file is compressed. No sensitive information should be put in the
+  initial block.
+* Any publically released code should contain a license block at the start
+  of the file.
+* Gem spec style information should be included in a block at the start of the
+  file (after the license if needed). Version and homepage information are
+  important for publically released code. Internally, dependencies can be helpful
+  in determining weather a JavaScript/CoffeeScript library is being used elsewhere.
+
+    ```Coffeescript
+    # version: 1.1.0
+    # homepage: https://github.com/orgsync/some_lib
+    # dependency: jQuery, ~> 1.7.1
+    ```
+    
 * Write self-documenting code and ignore the rest of this section. Seriously!
 * Comments longer than a word are capitalized and use punctuation. Use [one
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
