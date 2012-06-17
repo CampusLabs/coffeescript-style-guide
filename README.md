@@ -2,6 +2,7 @@
 
 * [Source Code Layout](#source-code-layout)
 * [Syntax](#syntax)
+* [Naming](#naming)
 
 ## Source Code Layout
 
@@ -290,3 +291,17 @@ would happen if the current value happened to be `false`.)
     # good
     enabled = true unless enabled?
     ```
+    
+## Naming
+
+> The only real difficulties in programming are cache invalidation and
+> naming things. <br/>
+> -- Phil Karlton
+
+* Use `snake_case` for variables.
+* Use `CamelCase` for classes, modules and methods.  (Keep acronyms like HTTP,
+  RFC, XML uppercase.)
+* Use `SCREAMING_SNAKE_CASE` for other constants.
+* The names of predicate methods (methods that return a boolean value)
+  should start with `is`.
+  (i.e. `isEmpty`).
