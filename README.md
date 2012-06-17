@@ -8,6 +8,7 @@
 * [Classes](#classes)
 * [Strings](#strings)
 * [Regular Expressions](#regular-expressions)
+* [Misc](#misc)
 
 ## Source Code Layout
 
@@ -483,3 +484,16 @@ would happen if the current value happened to be `false`.)
       end
     ///
     ```
+    
+## Misc
+
+* Avoid hashes as optional parameters. Does the method do too much?
+* Avoid methods longer than 10 LOC (lines of code). Ideally, most methods will be shorter than
+  5 LOC. Empty lines do not contribute to the relevant LOC.
+* Avoid parameter lists longer than three or four parameters.
+* Code in a functional way, avoiding mutation when that makes sense.
+* Avoid needless metaprogramming.
+* Do not mutate arguments unless that is the purpose of the method.
+* Avoid more than three levels of block nesting.
+* Be consistent. In an ideal world, be consistent with these guidelines.
+* Use common sense.
