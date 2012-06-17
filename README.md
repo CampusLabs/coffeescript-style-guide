@@ -7,6 +7,7 @@
 * [Annotations](#annotations)
 * [Classes](#classes)
 * [Strings](#strings)
+* [Regular Expressions](#regular-expressions)
 
 ## Source Code Layout
 
@@ -456,4 +457,29 @@ would happen if the current value happened to be `false`.)
 
     # good
     name = 'Bozhidar'
+    ```
+    
+## Regular Expressions
+
+* Don't use regular expressions if you just need plain text search in string:
+  `'text'.match('ex')`
+
+* Use non capturing groups when you don't use captured result of parenthesis.
+
+    ```Coffeescript
+    /(first|second)/   # bad
+    /(?:first|second)/ # good
+    ```
+
+* Use `///` modifier for complex regexps. This makes them more readable and you
+  can add some useful comments. Just be careful as spaces are ignored.
+
+    ```Coffeescript
+    regexp = ///
+      start         # some text
+      \s            # white space char
+      (group)       # first group
+      (?:alt1|alt2) # some alternation
+      end
+    ///
     ```
