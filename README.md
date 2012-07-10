@@ -309,8 +309,8 @@ would happen if the current value happened to be `false`.)
   RFC, XML uppercase.)
 * Use `SCREAMING_SNAKE_CASE` for other constants.
 * The names of predicate methods (methods that return a boolean value)
-  should start with `is`.
-  (i.e. `isEmpty`).
+  should start with `is` or `has`.
+  (i.e. `isEmpty`, `hasDefaultValue`).
 
 ## Comments
 
