@@ -497,3 +497,8 @@ would happen if the current value happened to be `false`.)
 * Avoid more than three levels of block nesting.
 * Be consistent. In an ideal world, be consistent with these guidelines.
 * Use common sense.
+
+## Referencing DOM
+
+* A class should never be used for both scripting and CSS. Classes used in scripting to find DOM
+  elements must use the prefix `js-`.
