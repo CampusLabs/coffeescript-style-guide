@@ -9,6 +9,7 @@
 * [Strings](#strings)
 * [Regular Expressions](#regular-expressions)
 * [Misc](#misc)
+* [Referencing DOM](#referencing-dom)
 
 ## Source Code Layout
 
