@@ -16,7 +16,7 @@
 * Use `UTF-8` as the source file encoding.
 * Use two **spaces** per indentation level.
 
-    ```Coffeescript
+    ```coffee
     # good
     someMethod = ->
       doSomething()
@@ -36,21 +36,21 @@
 
 * Use spaces around operators, after commas and semicolons.
 
-    ```Coffeescript
+    ```coffee
     sum = 1 + 2
     nums = [1, 2, 3]
     ```
 
 * No spaces after `(`, `[` or before `]`, `)`.
 
-    ```Coffeescript
+    ```coffee
     some(arg).other
     [1, 2, 3].length
     ```
 
 * No spaces after `:` when used in an object.
 
-    ```Coffeescript
+    ```coffee
     # bad
     song =
       name : 'Misty'
@@ -67,7 +67,7 @@
 * Use empty lines between methods and to break up a method into logical
   paragraphs.
 
-    ```Coffeescript
+    ```coffee
     someMethod = ->
       data = initialize(options)
 
@@ -87,7 +87,7 @@
 * Omit the parentheses on method creation when the method doesn't accept any
   arguments. This also goes for anonymous functions.
 
-     ```Coffeescript
+     ```coffee
      someMethod = ->
        # body omitted
 
@@ -98,7 +98,7 @@
 * Avoid the use of third party (underscore, jQuery) iterators when
   a `for` loop can be used. The iterators add unnecessary overhead.
 
-    ```Coffeescript
+    ```coffee
     arr = [1, 2, 3]
 
     # bad
@@ -111,7 +111,7 @@
 
 * Never use `then` for multi-line `if/unless`.
 
-    ```Coffeescript
+    ```coffee
     # bad
     if someCondition then
       # body omitted
@@ -124,7 +124,7 @@
 * Favor modifier `if/unless` usage when you have a single-line
   body. Another good alternative is the usage of control flow `and/or`.
 
-    ```Coffeescript
+    ```coffee
     # bad
     if someCondition
       doSomething
@@ -139,7 +139,7 @@
 * Favor `unless` over `if` for negative conditions (or control
   flow `or`).
 
-    ```Coffeescript
+    ```coffee
     # bad
     doSomething if !someCondition
 
@@ -152,7 +152,7 @@
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
 
-    ```Coffeescript
+    ```coffee
     # bad
     unless success?
       console.log 'failure'
@@ -170,7 +170,7 @@
   unless the condition contains an assignment (see "Using the return
   value of `=`" below).
 
-    ```Coffeescript
+    ```coffee
     # bad
     if (x > 10)
       # body omitted
@@ -187,7 +187,7 @@
 * Favor modifier `for` usage when you have a single-line
   body.
 
-    ```Coffeescript
+    ```coffee
     # bad
     for elem in elements
       doSomething
@@ -201,7 +201,7 @@
   status in CoffeeScript (e.g. `alert`). Use parentheses around the
   arguments of all other method invocations.
 
-    ```Coffeescript
+    ```coffee
     class Person
       constructor: (name, age) ->
         @name = name
@@ -219,14 +219,14 @@
 
 * Omit parenthesis for functions whose final argument is an anonymous function.
 
-    ```Coffeescript
+    ```coffee
     _.map [1, 2, 3], (num) ->
       num * 3
     ```
 
 * Avoid `return` where not required.
 
-    ```Coffeescript
+    ```coffee
     # bad
     someMethod = (someArr) ->
       return someArr.size
@@ -238,7 +238,7 @@
 
 * Avoid shadowing methods with local variables unless they are both equivalent
 
-    ```Coffeescript
+    ```coffee
     class Foo
       constructor: (options) ->
         @options = options
@@ -257,7 +257,7 @@
 
 * Use spaces around the `=` operator when assigning default values to method parameters:
 
-    ```Coffeescript
+    ```coffee
     # bad
     someMethod = (arg1='default', arg2=null, arg3=[]) ->
       # do something...
@@ -270,7 +270,7 @@
 * Using the return value of `=` (an assignment) is ok, but surround the
   assignment with parenthesis.
 
-    ```Coffeescript
+    ```coffee
     # good - shows intended use of assignment
     if (v = str.indexOf('foo')) ...
 
@@ -283,7 +283,7 @@
 
 * Use `or=` freely to initialize variables.
 
-    ```Coffeescript
+    ```coffee
     # set name to Bozhidar, only if it's null or false
     name or= 'Bozhidar'
     ```
@@ -291,7 +291,7 @@
 * Don't use `or=` to initialize boolean variables. (Consider what
 would happen if the current value happened to be `false`.)
 
-    ```Coffeescript
+    ```coffee
     # bad - would set enabled to true even if it was false
     enabled or= true
 
@@ -330,7 +330,7 @@ would happen if the current value happened to be `false`.)
   important for publically released code. Internally, dependencies can be helpful
   in determining weather a JavaScript/CoffeeScript library is being used elsewhere.
 
-    ```Coffeescript
+    ```coffee
     # version: 1.1.0
     # homepage: https://github.com/orgsync/some_lib
     # dependency: jQuery, ~> 1.7.1
@@ -341,7 +341,7 @@ would happen if the current value happened to be `false`.)
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
 * Avoid superfluous comments.
 
-    ```Coffeescript
+    ```coffee
     # bad
     counter += 1 # increments counter by one
     ```
@@ -364,7 +364,7 @@ would happen if the current value happened to be `false`.)
 * If multiple lines are required to describe the problem, subsequent
   lines should be indented two spaces after the `#`.
 
-    ```Coffeescript
+    ```coffee
     bar = ->
       # FIXME: This has crashed occasionally since v3.2.1. It may
       #   be related to the BarBazUtil upgrade.
@@ -375,7 +375,7 @@ would happen if the current value happened to be `false`.)
   be redundant, annotations may be left at the end of the offending line
   with no note. This usage should be the exception and not the rule.
 
-    ```Coffeescript
+    ```coffee
     bar = ->
       @sleep(100) # OPTIMIZE
     ```
@@ -402,7 +402,7 @@ would happen if the current value happened to be `false`.)
   as possible.
 * Prefer [duck-typing](http://en.wikipedia.org/wiki/Duck_typing) over inheritance.
 
-    ```Coffeescript
+    ```coffee
     # bad
     class Animal
       # abstract method
@@ -434,7 +434,7 @@ would happen if the current value happened to be `false`.)
 
 * Prefer string interpolation instead of string concatenation:
 
-    ```Coffeescript
+    ```coffee
     # bad
     emailWithName = user.name + ' <' + user.email + '>'
 
@@ -445,14 +445,14 @@ would happen if the current value happened to be `false`.)
 * Consider padding string interpolation code with space. It more clearly sets the
   code apart from the string.
 
-    ```Coffeescript
+    ```coffee
     "#{ user.last_name }, #{ user.first_name }"
     ```
 
 * Prefer single-quoted strings when you don't need string interpolation or
   special symbols such as `\t`, `\n`, `'`, etc.
 
-    ```Coffeescript
+    ```coffee
     # bad
     name = "Bozhidar"
 
@@ -467,7 +467,7 @@ would happen if the current value happened to be `false`.)
 
 * Use non capturing groups when you don't use captured result of parenthesis.
 
-    ```Coffeescript
+    ```coffee
     /(first|second)/   # bad
     /(?:first|second)/ # good
     ```
@@ -475,7 +475,7 @@ would happen if the current value happened to be `false`.)
 * Use `///` modifier for complex regexps. This makes them more readable and you
   can add some useful comments. Just be careful as spaces are ignored.
 
-    ```Coffeescript
+    ```coffee
     regexp = ///
       start         # some text
       \s            # white space char
