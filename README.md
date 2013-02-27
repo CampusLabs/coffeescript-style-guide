@@ -18,12 +18,12 @@
 
     ```Coffeescript
     # good
-    some_method = ->
-      do_something
+    someMethod = ->
+      doSomething()
 
     # bad - four spaces
-    some_method = ->
-        do_something
+    someMethod = ->
+        doSomething()
     ```
 
 * Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are covered by default,
@@ -47,7 +47,7 @@
     some(arg).other
     [1, 2, 3].length
     ```
-    
+
 * No spaces after `:` when used in an object.
 
     ```Coffeescript
@@ -68,14 +68,14 @@
   paragraphs.
 
     ```Coffeescript
-    some_method = ->
+    someMethod = ->
       data = initialize(options)
 
       data.manipulate
 
       data.result
 
-    some_other_method = ->
+    someOtherMethod = ->
       result
     ```
 
@@ -88,10 +88,10 @@
   arguments. This also goes for anonymous functions.
 
      ```Coffeescript
-     some_method = ->
+     someMethod = ->
        # body omitted
 
-     some_method_with_arguments = (arg1, arg2) ->
+     someMethodWithArguments = (arg1, arg2) ->
        # body omitted
      ```
 
@@ -113,11 +113,11 @@
 
     ```Coffeescript
     # bad
-    if some_condition then
+    if someCondition then
       # body omitted
 
     # good
-    if some_condition
+    if someCondition
       # body omitted
     ```
 
@@ -126,14 +126,14 @@
 
     ```Coffeescript
     # bad
-    if some_condition
-      do_something
+    if someCondition
+      doSomething
 
     # good
-    do_something if some_condition
+    doSomething if someCondition
 
     # another good option
-    some_condition and do_something
+    someCondition and doSomething
     ```
 
 * Favor `unless` over `if` for negative conditions (or control
@@ -141,13 +141,13 @@
 
     ```Coffeescript
     # bad
-    do_something if !some_condition
+    doSomething if !someCondition
 
     # good
-    do_something unless some_condition
+    doSomething unless someCondition
 
     # another good option
-    some_condition or do_something
+    someCondition or doSomething
     ```
 
 * Never use `unless` with `else`. Rewrite these with the positive case first.
@@ -180,7 +180,7 @@
       # body omitted
 
     # ok
-    if (x = self.next_value)
+    if (x = self.nextValue)
       # body omitted
     ```
 
@@ -190,10 +190,10 @@
     ```Coffeescript
     # bad
     for elem in elements
-      do_something
+      doSomething
 
     # good
-    do_something for elem in elements
+    doSomething for elem in elements
     ```
 
 * Omit parentheses around parameters for methods that are part of an
@@ -216,7 +216,7 @@
     x = Math.sin(y)
     array.delete(e)
     ```
-    
+
 * Omit parenthesis for functions whose final argument is an anonymous function.
 
     ```Coffeescript
@@ -228,12 +228,12 @@
 
     ```Coffeescript
     # bad
-    some_method = (some_arr) ->
-      return some_arr.size
+    someMethod = (someArr) ->
+      return someArr.size
 
     # good
-    some_method = (some_arr) ->
-      some_arr.size
+    someMethod = (someArr) ->
+      someArr.size
     ```
 
 * Avoid shadowing methods with local variables unless they are both equivalent
@@ -244,12 +244,12 @@
         @options = options
 
       # bad
-      do_something = (options = {}) ->
+      doSomething = (options = {}) ->
         unless options['when'] == 'later'
           output(self.options[:message])
 
       # good
-      do_something = (params = {}) ->
+      doSomething = (params = {}) ->
         unless params['when'] == 'later'
           output(options[:message])
     ```
@@ -259,11 +259,11 @@
 
     ```Coffeescript
     # bad
-    some_method = (arg1='default', arg2=null, arg3=[]) ->
+    someMethod = (arg1='default', arg2=null, arg3=[]) ->
       # do something...
 
     # good
-    some_method = (arg1 = :default, arg2 = nil, arg3 = []) ->
+    someMethod = (arg1 = 'default', arg2 = null, arg3 = []) ->
       # do something...
     ```
 
@@ -278,7 +278,7 @@
     if v = str.indexOf('foo') ...
 
     # also good - shows intended use of assignment and has correct precedence.
-    if (v = @next_value) == 'hello' ...
+    if (v = @nextValue) == 'hello' ...
     ```
 
 * Use `or=` freely to initialize variables.
@@ -296,22 +296,21 @@ would happen if the current value happened to be `false`.)
     enabled or= true
 
     # good
-    enabled = true unless enabled?
+    enabled ?= true
     ```
-    
+
 ## Naming
 
 > The only real difficulties in programming are cache invalidation and
 > naming things. <br/>
 > -- Phil Karlton
 
-* Use `snake_case` for variables.
-* Use `CamelCase` for classes, modules and methods.  (Keep acronyms like HTTP,
-  RFC, XML uppercase.)
-* Use `SCREAMING_SNAKE_CASE` for other constants.
+* Use `camelCase` for variables and properties.
+* Use capitalized `CamelCase` for constructors and modules.
+  (Keep acronyms like HTTP, RFC, XML uppercase.)
+* Use `SCREAMING_SNAKE_CASE` for constants.
 * The names of predicate methods (methods that return a boolean value)
-  should start with `is` or `has`.
-  (i.e. `isEmpty`, `hasDefaultValue`).
+  should start with `is` or `has`. (i.e. `isEmpty`, `hasDefaultValue`).
 
 ## Comments
 
@@ -336,7 +335,7 @@ would happen if the current value happened to be `false`.)
     # homepage: https://github.com/orgsync/some_lib
     # dependency: jQuery, ~> 1.7.1
     ```
-    
+
 * Write self-documenting code and ignore the rest of this section. Seriously!
 * Comments longer than a word are capitalized and use punctuation. Use [one
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
@@ -437,10 +436,10 @@ would happen if the current value happened to be `false`.)
 
     ```Coffeescript
     # bad
-    email_with_name = user.name + ' <' + user.email + '>'
+    emailWithName = user.name + ' <' + user.email + '>'
 
     # good
-    email_with_name = "#{user.name} <#{user.email}>"
+    emailWithName = "#{user.name} <#{user.email}>"
     ```
 
 * Consider padding string interpolation code with space. It more clearly sets the
@@ -460,7 +459,7 @@ would happen if the current value happened to be `false`.)
     # good
     name = 'Bozhidar'
     ```
-    
+
 ## Regular Expressions
 
 * Don't use regular expressions if you just need plain text search in string:
@@ -485,7 +484,7 @@ would happen if the current value happened to be `false`.)
       end
     ///
     ```
-    
+
 ## Misc
 
 * Avoid hashes as optional parameters. Does the method do too much?
@@ -501,5 +500,5 @@ would happen if the current value happened to be `false`.)
 
 ## Referencing DOM
 
-* A class should never be used for both scripting and CSS. Classes used in scripting to find DOM
-  elements must use the prefix `js-`.
+* A class should never be used for both scripting and CSS. Classes used in
+  scripting to find DOM elements must use the prefix `js-`.
